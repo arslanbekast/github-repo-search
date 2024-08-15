@@ -1,9 +1,10 @@
 import { GithubApiResponse } from '@/features/repos/api/reposApi.types'
+import { FetchReposResponse } from '@/features/repos/model/reposSlice'
 
 /**
  * Преобразует ответ от GitHub API в нужный формат.
  * @param {GithubApiResponse} response - Ответ от GitHub API.
- * @returns {Object} - Возвращает объект, содержащий общее количество репозиториев и массив объектов с информацией о каждом репозитории.
+ * @returns {FetchReposResponse} - Возвращает объект, содержащий общее количество репозиториев и массив объектов с информацией о каждом репозитории.
  * @returns {number} totalCount - Общее количество репозиториев в ответе.
  * @returns {Array} items - Массив объектов, содержащих информацию о каждом репозитории.
  * @returns {number} items[].id - Идентификатор репозитория.
@@ -16,7 +17,7 @@ import { GithubApiResponse } from '@/features/repos/api/reposApi.types'
  * @returns {string} items[].license - Название лицензии или 'Нет лицензии', если лицензия не указана.
  */
 
-export const reposTransform = (response: GithubApiResponse) => {
+export const reposTransform = (response: GithubApiResponse): FetchReposResponse => {
   return {
     totalCount: response.total_count,
     items: response.items.map(repo => ({
@@ -28,6 +29,7 @@ export const reposTransform = (response: GithubApiResponse) => {
       description: repo.description,
       updatedAt: repo.updated_at,
       license: repo.license?.name || 'Нет лицензии',
+      topics: repo.topics.map(topic => topic),
     })),
   }
 }
