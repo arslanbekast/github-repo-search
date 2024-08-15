@@ -11,7 +11,6 @@ export const SearchBar = () => {
         <TextField
           placeholder="Поисковый запрос"
           variant="outlined"
-          size="small"
           color="primary"
           error={!!error}
           helperText={error}
@@ -19,6 +18,15 @@ export const SearchBar = () => {
           value={query}
           onChange={onChangeHandler}
           onKeyUp={handleKeyPress}
+          sx={{
+            '& .MuiOutlinedInput-input': {
+              backgroundColor: '#f2f2f2',
+              padding: '9px 16px',
+            },
+            '& .Mui-error': {
+              fontWeight: 700,
+            },
+          }}
         />
         <Button variant="contained" color="primary" className={s.button} onClick={handleSearch}>
           Искать
