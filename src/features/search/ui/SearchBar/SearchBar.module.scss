@@ -1,0 +1,19 @@
+.searchBar {
+  display: flex;
+  gap: 8px;
+  background-color: #00838f;
+  padding: 19px 32px;
+
+  .textField {
+    width: 100%;
+    max-width: 912px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .button {
+    width: 105px;
+    height: 40px;
+  }
+}
