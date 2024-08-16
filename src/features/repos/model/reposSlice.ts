@@ -92,7 +92,7 @@ export type Repo = {
   license: string
   topics: string[]
 }
-type ReposState = {
+export type ReposState = {
   repos: Repo[]
   selectedRepo: Repo | null
   loading: boolean
