@@ -88,6 +88,20 @@ export const ReposTable = () => {
         onRowsPerPageChange={handleItemsPerPageChange}
         rowsPerPageOptions={[5, 10, 25, 50]}
         disabled={loading}
+        sx={{
+          '& .MuiTablePagination-selectLabel': {
+            fontSize: '12px',
+            color: '#00000099',
+          },
+          '& .MuiTablePagination-displayedRows': {
+            fontSize: '12px',
+            color: '#000000DE',
+          },
+          '& .MuiTablePagination-selectIcon': { top: 0 },
+          '& .MuiTablePagination-input': { marginRight: '26px' },
+          '& .MuiTablePagination-select': { paddingLeft: 0 },
+          '& .MuiTablePagination-actions': { color: '#0000008F' },
+        }}
       />
     </Box>
   )
