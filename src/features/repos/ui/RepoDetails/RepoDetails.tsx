@@ -12,7 +12,7 @@ export const RepoDetails = memo(() => {
     <Box className={s.repoDetails}>
       {selectedRepo ? (
         <>
-          <Typography variant="h4" className={s.repoName}>
+          <Typography variant="h4" className={s.repoName} fontSize={'32px'}>
             {selectedRepo.name}
           </Typography>
           <Typography variant="body2" mb={2}>
